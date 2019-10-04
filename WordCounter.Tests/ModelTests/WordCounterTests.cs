@@ -11,10 +11,18 @@ namespace WordCounter.Tests
         [TestMethod]
         public void WordMatch_LooksForWordMatch_True()
         {
-            Counter test = new Counter("cat", "cat");
+            Counter test = new Counter();
             // string userInput = "cat";
             bool result = test.WordMatch("cat", "cat");
             Assert.AreEqual (result, true);
+        }
+
+        [TestMethod]
+        public void WordCounter_LooksForWordMatch_1()
+        {
+            Counter test = new Counter();
+            test.WordCounter("cat", "The cat");
+            Assert.AreEqual(1, test.WordCount);
         }
     }
 }
