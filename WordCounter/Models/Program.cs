@@ -18,7 +18,19 @@ namespace WordCounter.Models
             string word = Console.ReadLine();
             Counter count = new Counter();
             count.WordCounter(word, sentence);
-            Console.WriteLine(count.WordCount);
+            if (count.WordCount > 1)
+            {
+                Console.WriteLine("Your sentence contains the word '" + word + "' " + count.WordCount + " times.");
+            }
+            else if (count.WordCount == 0)
+            {
+                Console.WriteLine("The word you chose is not in the sentence you typed.");
+            }
+            else
+            {
+                Console.WriteLine("Your sentence contains the word '" + word + "' " + count.WordCount + " time.");
+
+            }
             Console.WriteLine("Would you like to play again? Y/N");
             string repeatYN = Console.ReadLine();
             if (repeatYN == "y" || repeatYN == "Y")

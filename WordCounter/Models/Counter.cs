@@ -45,6 +45,5 @@ namespace WordCounter.Models
                 }
             }
         }
-
     }
 }
