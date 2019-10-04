@@ -24,5 +24,13 @@ namespace WordCounter.Tests
             test.WordCounter("cat", "The cat");
             Assert.AreEqual(1, test.WordCount);
         }
+
+        [TestMethod]
+        public void WordCounter_LooksForSpecificWordMatch_1()
+        {
+            Counter test = new Counter();
+            test.WordCounter("cat", "The cathedral has a cat that lives inside.");
+            Assert.AreEqual(1, test.WordCount);
+        }
     }
 }
