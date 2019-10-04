@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using WordCounter.Models;
 using System;
 
-// namespace ProjectName.Tests
-// {
-//     [TestClass]
-//     public class ItemTest
-//     {
-
-//         [TestMethod]
-//         public void MethodName_WhatMethodDoes_ExpectedOutput()
-//         {
-//             // Arrange
-
-//             // Act
-
-//             // Assert
-//         }
-//     }
-// }
+namespace WordCounter.Tests
+{
+    [TestClass]
+    public class WordCounterTest
+    {
+        [TestMethod]
+        public void WordMatch_LooksForWordMatch_True()
+        {
+            CounterClass test = new CounterClass();
+            string userInput = "cat";
+            Assert.AreEqual (userInput, test.Word);
+        }
+    }
+}
