@@ -27,7 +27,6 @@ namespace WordCounter.Models
                 return false;
             }
         }
-
         public void WordCounter(string word, string sentence)
         {
             string lowerCaseWord = word.ToLower();
@@ -35,13 +34,15 @@ namespace WordCounter.Models
             string[] sentenceArray = lowerCaseSentence.Split(' ');
             for (int i = 0; i < sentenceArray.Length; i++)
             {
-                if (sentenceArray[i] == lowerCaseWord || sentenceArray[i] + '.' == lowerCaseWord)
+                string strippedWord = String.Join("", sentenceArray[i].Where(char.IsLetterOrDigit));
+                Console.WriteLine(strippedWord);
+                if (strippedWord == lowerCaseWord)
                 {
-                    this.WordCount +=1;
+                    this.WordCount += 1;
                 }
                 else
                 {
-                    this.WordCount +=0;
+                    this.WordCount += 0;
                 }
             }
         }
