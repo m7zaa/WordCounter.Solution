@@ -1,6 +1,7 @@
 using WordCounter.Models;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 namespace WordCounter.Models
 {
     public class Counter
@@ -29,10 +30,12 @@ namespace WordCounter.Models
 
         public void WordCounter(string word, string sentence)
         {
-            string[] sentenceArray = sentence.Split(' ');
+            string lowerCaseWord = word.ToLower();
+            string lowerCaseSentence = sentence.ToLower();
+            string[] sentenceArray = lowerCaseSentence.Split(' ');
             for (int i = 0; i < sentenceArray.Length; i++)
             {
-                if (sentenceArray[i] == word)
+                if (sentenceArray[i] == lowerCaseWord || sentenceArray[i] + '.' == lowerCaseWord)
                 {
                     this.WordCount +=1;
                 }
@@ -42,5 +45,6 @@ namespace WordCounter.Models
                 }
             }
         }
+
     }
 }
